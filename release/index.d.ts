@@ -1,3 +1,3 @@
-export * from './fs-test.module';
-export * from './components/fs-test-component';
-export * from './services/fs-test.service';
+export * from './fs-component.module';
+export * from './components/fs-component';
+export * from './services/fs-component.service';

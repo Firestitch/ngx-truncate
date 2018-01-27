@@ -83,7 +83,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["c:/Projects/component-boilerplate/src/c:/Projects/component-boilerplate/src/src/styles.scss","c:/Projects/component-boilerplate/src/c:/Projects/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\r\n  font-weight: 600;\r\n}\r\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["/Users/Basters/dev/firestitch/component-boilerplate/src/src/styles.scss","/Users/Basters/dev/firestitch/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\n  font-weight: 600;\n}\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -173,14 +173,14 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ "./components/fs-test-component/fs-test-component.component.html":
+/***/ "./components/fs-component/fs-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p class=\"test-component\">My test Component</p>\r\n"
+module.exports = "<h1>Component template</h1>\nfs-component.component.html\n"
 
 /***/ }),
 
-/***/ "./components/fs-test-component/fs-test-component.component.ts":
+/***/ "./components/fs-component/fs-component.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -196,25 +196,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
-var FsTestComponentComponent = /** @class */ (function () {
-    function FsTestComponentComponent() {
+var FsComponentComponent = /** @class */ (function () {
+    function FsComponentComponent() {
     }
-    FsTestComponentComponent = __decorate([
+    FsComponentComponent = __decorate([
         core_1.Component({
-            selector: 'fs-test-component',
-            template: __webpack_require__("./components/fs-test-component/fs-test-component.component.html"),
+            selector: 'fs-component',
+            template: __webpack_require__("./components/fs-component/fs-component.component.html"),
             styles: [__webpack_require__("./styles.scss")],
         }),
         __metadata("design:paramtypes", [])
-    ], FsTestComponentComponent);
-    return FsTestComponentComponent;
+    ], FsComponentComponent);
+    return FsComponentComponent;
 }());
-exports.FsTestComponentComponent = FsTestComponentComponent;
+exports.FsComponentComponent = FsComponentComponent;
 
 
 /***/ }),
 
-/***/ "./components/fs-test-component/index.ts":
+/***/ "./components/fs-component/index.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -223,12 +223,12 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__("./components/fs-test-component/fs-test-component.component.ts"));
+__export(__webpack_require__("./components/fs-component/fs-component.component.ts"));
 
 
 /***/ }),
 
-/***/ "./fs-test.module.ts":
+/***/ "./fs-component.module.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -242,40 +242,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
 var common_1 = __webpack_require__("@angular/common");
-// Components
-var fs_test_component_1 = __webpack_require__("./components/fs-test-component/index.ts");
-var fs_test_service_1 = __webpack_require__("./services/fs-test.service.ts");
-var FsTestModule = /** @class */ (function () {
-    function FsTestModule() {
+var fs_component_component_1 = __webpack_require__("./components/fs-component/fs-component.component.ts");
+var fs_component_service_1 = __webpack_require__("./services/fs-component.service.ts");
+var FsComponentModule = /** @class */ (function () {
+    function FsComponentModule() {
     }
-    FsTestModule_1 = FsTestModule;
-    FsTestModule.forRoot = function () {
+    FsComponentModule_1 = FsComponentModule;
+    FsComponentModule.forRoot = function () {
         return {
-            ngModule: FsTestModule_1,
-            providers: [fs_test_service_1.FsTestService]
+            ngModule: FsComponentModule_1,
+            providers: [fs_component_service_1.FsComponentService]
         };
     };
-    FsTestModule = FsTestModule_1 = __decorate([
+    FsComponentModule = FsComponentModule_1 = __decorate([
         core_1.NgModule({
             imports: [
                 common_1.CommonModule,
             ],
             exports: [
-                fs_test_component_1.FsTestComponentComponent,
+                fs_component_component_1.FsComponentComponent,
             ],
             entryComponents: [],
             declarations: [
-                fs_test_component_1.FsTestComponentComponent,
+                fs_component_component_1.FsComponentComponent,
             ],
             providers: [
-                fs_test_service_1.FsTestService,
+                fs_component_service_1.FsComponentService,
             ],
         })
-    ], FsTestModule);
-    return FsTestModule;
-    var FsTestModule_1;
+    ], FsComponentModule);
+    return FsComponentModule;
+    var FsComponentModule_1;
 }());
-exports.FsTestModule = FsTestModule;
+exports.FsComponentModule = FsComponentModule;
 
 
 /***/ }),
@@ -289,14 +288,14 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__("./fs-test.module.ts"));
-__export(__webpack_require__("./components/fs-test-component/index.ts"));
-__export(__webpack_require__("./services/fs-test.service.ts"));
+__export(__webpack_require__("./fs-component.module.ts"));
+__export(__webpack_require__("./components/fs-component/index.ts"));
+__export(__webpack_require__("./services/fs-component.service.ts"));
 
 
 /***/ }),
 
-/***/ "./services/fs-test.service.ts":
+/***/ "./services/fs-component.service.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -312,19 +311,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
-var FsTestService = /** @class */ (function () {
-    function FsTestService() {
+var FsComponentService = /** @class */ (function () {
+    function FsComponentService() {
     }
-    FsTestService.prototype.sayHello = function () {
+    FsComponentService.prototype.sayHello = function () {
         console.log('hello');
     };
-    FsTestService = __decorate([
+    FsComponentService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [])
-    ], FsTestService);
-    return FsTestService;
+    ], FsComponentService);
+    return FsComponentService;
 }());
-exports.FsTestService = FsTestService;
+exports.FsComponentService = FsComponentService;
 
 
 /***/ }),
