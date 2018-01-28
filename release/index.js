@@ -83,7 +83,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["/Users/Basters/dev/firestitch/component-boilerplate/src/src/styles.scss","/Users/Basters/dev/firestitch/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\n  font-weight: 600;\n}\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["C:/Projects/component-boilerplate/src/C:/Projects/component-boilerplate/src/src/styles.scss","C:/Projects/component-boilerplate/src/C:/Projects/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\r\n  font-weight: 600;\r\n}\r\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 

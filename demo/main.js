@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["/Users/Basters/dev/firestitch/component-boilerplate/src/src/styles.scss","/Users/Basters/dev/firestitch/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\n  font-weight: 600;\n}\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"version":3,"sources":["C:/Projects/component-boilerplate/src/C:/Projects/component-boilerplate/src/src/styles.scss","C:/Projects/component-boilerplate/src/C:/Projects/component-boilerplate/styles.scss"],"names":[],"mappings":"AAAA;EACE,iBAAA;CCCD","file":"styles.scss","sourcesContent":[".test-component {\r\n  font-weight: 600;\r\n}\r\n",".test-component {\n  font-weight: 600;\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -227,7 +227,7 @@ webpackEmptyAsyncContext.id = "../tools lazy recursive";
 /***/ "./app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"overview\">\n    <h1>Overview</h1>\n    <li><b>npm run serve</b> Starts the playground web server</li>\n    <li><b>npm run lint</b> Validates the package</li>\n    <li><b>npm run release</b> Builds the release directory for publishing to NPM</li>\n</div>\n\n<fs-component-examples>\n    <h1>Examples</h1> \n    <div class=\"example\">\n        <fs-component-example fsTitle=\"Example Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <example-component></example-component>\n        </fs-component-example>  \n    </div>  \n\n    <div class=\"example\">\n        <fs-component-example fsTitle=\"Example2 Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <!-- <example2-component></example2-component> -->\n        </fs-component-example>  \n    </div>  \n</fs-component-examples>\n\n"
+module.exports = "<div class=\"overview\">\n    <h1>Overview</h1>\n    <li><b>npm run serve</b> Starts the playground web server</li>\n    <li><b>npm run lint</b> Validates the package</li>\n    <li><b>npm run release</b> Builds the release directory for publishing to NPM</li>\n</div>\n\n<fs-component-examples>\n    <h1>Examples</h1> \n    <div class=\"example\">\n        <fs-component-example fsTitle=\"Example Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <example-component></example-component>\n        </fs-component-example>  \n    </div>  \n\n    <!-- <div class=\"example\">\n        <fs-component-example fsTitle=\"Example2 Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <example2-component></example2-component>\n        </fs-component-example>  \n    </div>   -->\n</fs-component-examples>\n\n"
 
 /***/ }),
 
@@ -300,7 +300,7 @@ exports.ExampleComponentComponent = ExampleComponentComponent;
 /***/ "./app/components/fs-component-example/fs-component-example.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"border:1px solid black\">\n    <!-- <div>{{title}}</div>\n        source icon\n\n    <div>\n        <tabs>\n            <html><ts><css>\n    \n    <running-example> -->\n        <ng-content></ng-content>\n    \n</div>"
+module.exports = "<div style=\"border:1px solid black\">\r\n    <!-- <div>{{title}}</div>\r\n        source icon\r\n\r\n    <div>\r\n        <tabs>\r\n            <html><ts><css>\r\n    \r\n    <running-example> -->\r\n        <ng-content></ng-content>\r\n    \r\n</div>"
 
 /***/ }),
 
