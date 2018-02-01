@@ -1,14 +1,14 @@
 import './../tools/assets/playground.scss';
 
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app/app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FsComponentModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app/material.module';
-import { FsComponentExampleComponent } from './app/components/fs-component-example/fs-component-example.component';
-import { FsComponentExamplesComponent } from './app/components/fs-component-examples/fs-component-examples.component';
-import { ExampleComponentComponent } from './app/components/example-component/example-component.component';
+import { FirstExampleComponent } from './app/components/first-example/first-example.component';
+import { FsExampleModule } from '@firestitch/example';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -16,15 +16,15 @@ import { ExampleComponentComponent } from './app/components/example-component/ex
     BrowserModule,
     FsComponentModule,
     BrowserAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    FormsModule,
+    FsExampleModule
   ],
   entryComponents: [
   ],
   declarations: [
     AppComponent,
-    FsComponentExampleComponent,
-    FsComponentExamplesComponent,
-    ExampleComponentComponent
+    FirstExampleComponent
   ],
   providers: [
   ],

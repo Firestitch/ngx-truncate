@@ -1,6 +1,6 @@
 {
   "angularCompilerOptions": {
-    "genDir": "release/",
+    "genDir": "package/",
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
     "annotationsAs": "decorators"

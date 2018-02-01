@@ -15,7 +15,7 @@ exports.push([module.i, ".test-component {\n  font-weight: 600;\n}\n\n", "", {"v
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/postcss-loader/lib/index.js?{\"sourceMap\":true}!../node_modules/resolve-url-loader/index.js?{\"sourceMap\":true}!./app/components/fs-component-examples/fs-component-examples.component.css":
+/***/ "../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/postcss-loader/lib/index.js?{\"sourceMap\":true}!../node_modules/resolve-url-loader/index.js?{\"sourceMap\":true}!./app/components/first-example/first-example.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/css-base.js")(true);
@@ -23,7 +23,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"fs-component-examples.component.css","sourceRoot":""}]);
+exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"first-example.component.css","sourceRoot":""}]);
 
 // exports
 
@@ -33,7 +33,7 @@ exports.push([module.i, "", "", {"version":3,"sources":[],"names":[],"mappings":
 /***/ "../src/components/fs-component/fs-component.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Component template</h1>\nfs-component.component.html\n"
+module.exports = "<b>fs-component.component.html</b>\n<div>Template goes here</div>\n\n"
 
 /***/ }),
 
@@ -53,7 +53,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var FsComponentComponent = /** @class */ (function () {
+var FsComponentComponent = (function () {
     function FsComponentComponent() {
     }
     FsComponentComponent = __decorate([
@@ -101,7 +101,7 @@ var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js"
 var common_1 = __webpack_require__("../node_modules/@angular/common/esm2015/common.js");
 var fs_component_component_1 = __webpack_require__("../src/components/fs-component/fs-component.component.ts");
 var fs_component_service_1 = __webpack_require__("../src/services/fs-component.service.ts");
-var FsComponentModule = /** @class */ (function () {
+var FsComponentModule = (function () {
     function FsComponentModule() {
     }
     FsComponentModule_1 = FsComponentModule;
@@ -168,7 +168,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var FsComponentService = /** @class */ (function () {
+var FsComponentService = (function () {
     function FsComponentService() {
     }
     FsComponentService.prototype.sayHello = function () {
@@ -227,7 +227,7 @@ webpackEmptyAsyncContext.id = "../tools lazy recursive";
 /***/ "./app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"overview\">\n    <h1>Overview</h1>\n    <li><b>npm run serve</b> Starts the playground web server</li>\n    <li><b>npm run lint</b> Validates the package</li>\n    <li><b>npm run release</b> Builds the release directory for publishing to NPM</li>\n</div>\n\n<fs-component-examples>\n    <h1>Examples</h1> \n    <div class=\"example\">\n        <fs-component-example fsTitle=\"Example Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <example-component></example-component>\n        </fs-component-example>  \n    </div>  \n\n    <!-- <div class=\"example\">\n        <fs-component-example fsTitle=\"Example2 Component\" fsHtml=\"...\" fsTs=\"...\" fsCss=\"...\">     \n            <example2-component></example2-component>\n        </fs-component-example>  \n    </div>   -->\n</fs-component-examples>\n\n"
+module.exports = "<h1>[Component Type] Examples</h1>\n<div class=\"example\">\n    <fs-example title=\"First Example\" componentName=\"first-example\">\n        <first-example></first-example>\n    </fs-example>\n</div>\n"
 
 /***/ }),
 
@@ -244,7 +244,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var AppComponent = /** @class */ (function () {
+var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
@@ -260,84 +260,11 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ "./app/components/example-component/example-component.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<fs-component param=\"x\"></fs-component>\n"
-
-/***/ }),
-
-/***/ "./app/components/example-component/example-component.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var ExampleComponentComponent = /** @class */ (function () {
-    function ExampleComponentComponent() {
-        this.x = 'bob';
-    }
-    ExampleComponentComponent = __decorate([
-        core_1.Component({
-            selector: 'example-component',
-            template: __webpack_require__("./app/components/example-component/example-component.component.html")
-        })
-    ], ExampleComponentComponent);
-    return ExampleComponentComponent;
-}());
-exports.ExampleComponentComponent = ExampleComponentComponent;
-
-
-/***/ }),
-
-/***/ "./app/components/fs-component-example/fs-component-example.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"border:1px solid black\">\r\n    <!-- <div>{{title}}</div>\r\n        source icon\r\n\r\n    <div>\r\n        <tabs>\r\n            <html><ts><css>\r\n    \r\n    <running-example> -->\r\n        <ng-content></ng-content>\r\n    \r\n</div>"
-
-/***/ }),
-
-/***/ "./app/components/fs-component-example/fs-component-example.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var FsComponentExampleComponent = /** @class */ (function () {
-    function FsComponentExampleComponent() {
-    }
-    FsComponentExampleComponent = __decorate([
-        core_1.Component({
-            selector: 'fs-component-example',
-            template: __webpack_require__("./app/components/fs-component-example/fs-component-example.component.html")
-        })
-    ], FsComponentExampleComponent);
-    return FsComponentExampleComponent;
-}());
-exports.FsComponentExampleComponent = FsComponentExampleComponent;
-
-
-/***/ }),
-
-/***/ "./app/components/fs-component-examples/fs-component-examples.component.css":
+/***/ "./app/components/first-example/first-example.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 
-        var result = __webpack_require__("../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/postcss-loader/lib/index.js?{\"sourceMap\":true}!../node_modules/resolve-url-loader/index.js?{\"sourceMap\":true}!./app/components/fs-component-examples/fs-component-examples.component.css");
+        var result = __webpack_require__("../node_modules/css-loader/index.js?{\"sourceMap\":true}!../node_modules/postcss-loader/lib/index.js?{\"sourceMap\":true}!../node_modules/resolve-url-loader/index.js?{\"sourceMap\":true}!./app/components/first-example/first-example.component.css");
 
         if (typeof result === "string") {
             module.exports = result;
@@ -348,14 +275,14 @@ exports.FsComponentExampleComponent = FsComponentExampleComponent;
 
 /***/ }),
 
-/***/ "./app/components/fs-component-examples/fs-component-examples.component.html":
+/***/ "./app/components/first-example/first-example.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ng-content></ng-content>"
+module.exports = "<fs-component></fs-component>\n"
 
 /***/ }),
 
-/***/ "./app/components/fs-component-examples/fs-component-examples.component.ts":
+/***/ "./app/components/first-example/first-example.component.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -368,19 +295,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var FsComponentExamplesComponent = /** @class */ (function () {
-    function FsComponentExamplesComponent() {
+var FirstExampleComponent = (function () {
+    function FirstExampleComponent() {
     }
-    FsComponentExamplesComponent = __decorate([
+    FirstExampleComponent = __decorate([
         core_1.Component({
-            selector: 'fs-component-examples',
-            template: __webpack_require__("./app/components/fs-component-examples/fs-component-examples.component.html"),
-            styles: [__webpack_require__("./app/components/fs-component-examples/fs-component-examples.component.css")]
+            selector: 'first-example',
+            template: __webpack_require__("./app/components/first-example/first-example.component.html"),
+            styles: [__webpack_require__("./app/components/first-example/first-example.component.css")]
         })
-    ], FsComponentExamplesComponent);
-    return FsComponentExamplesComponent;
+    ], FirstExampleComponent);
+    return FirstExampleComponent;
 }());
-exports.FsComponentExamplesComponent = FsComponentExamplesComponent;
+exports.FirstExampleComponent = FirstExampleComponent;
 
 
 /***/ }),
@@ -401,7 +328,7 @@ var material_1 = __webpack_require__("../node_modules/@angular/material/esm2015/
 //import { FlexLayoutModule } from '@angular/flex-layout';
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
 var table_1 = __webpack_require__("../node_modules/@angular/cdk/esm2015/table.js");
-var AppMaterialModule = /** @class */ (function () {
+var AppMaterialModule = (function () {
     function AppMaterialModule() {
     }
     AppMaterialModule = __decorate([
@@ -513,15 +440,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__("../tools/assets/playground.scss");
 var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
+var forms_1 = __webpack_require__("../node_modules/@angular/forms/esm2015/forms.js");
 var app_component_1 = __webpack_require__("./app/app.component.ts");
 var platform_browser_1 = __webpack_require__("../node_modules/@angular/platform-browser/esm2015/platform-browser.js");
 var src_1 = __webpack_require__("../src/index.ts");
 var animations_1 = __webpack_require__("../node_modules/@angular/platform-browser/esm2015/animations.js");
 var material_module_1 = __webpack_require__("./app/material.module.ts");
-var fs_component_example_component_1 = __webpack_require__("./app/components/fs-component-example/fs-component-example.component.ts");
-var fs_component_examples_component_1 = __webpack_require__("./app/components/fs-component-examples/fs-component-examples.component.ts");
-var example_component_component_1 = __webpack_require__("./app/components/example-component/example-component.component.ts");
-var PlaygroundModule = /** @class */ (function () {
+var first_example_component_1 = __webpack_require__("./app/components/first-example/first-example.component.ts");
+var example_1 = __webpack_require__("../node_modules/@firestitch/example/package/index.js");
+var PlaygroundModule = (function () {
     function PlaygroundModule() {
     }
     PlaygroundModule = __decorate([
@@ -531,14 +458,14 @@ var PlaygroundModule = /** @class */ (function () {
                 platform_browser_1.BrowserModule,
                 src_1.FsComponentModule,
                 animations_1.BrowserAnimationsModule,
-                material_module_1.AppMaterialModule
+                material_module_1.AppMaterialModule,
+                forms_1.FormsModule,
+                example_1.FsExampleModule
             ],
             entryComponents: [],
             declarations: [
                 app_component_1.AppComponent,
-                fs_component_example_component_1.FsComponentExampleComponent,
-                fs_component_examples_component_1.FsComponentExamplesComponent,
-                example_component_component_1.ExampleComponentComponent
+                first_example_component_1.FirstExampleComponent
             ],
             providers: [],
         })
