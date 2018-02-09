@@ -1,3 +1,6 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {NgModule} from '@angular/core';
+
 import {
     MatAutocompleteModule,
     MatButtonModule,
@@ -31,13 +34,9 @@ import {
     MatTooltipModule,
     MatStepperModule
   } from '@angular/material';
-  //import { FlexLayoutModule } from '@angular/flex-layout';
-  import {NgModule} from '@angular/core';
-  import {CdkTableModule} from '@angular/cdk/table';
 
   @NgModule({
     exports: [
-      CdkTableModule,
       MatAutocompleteModule,
       MatButtonModule,
       MatButtonToggleModule,
@@ -69,7 +68,7 @@ import {
       MatTabsModule,
       MatToolbarModule,
       MatTooltipModule,
-      //FlexLayoutModule
+      FlexLayoutModule
     ]
   })
   export class AppMaterialModule {}

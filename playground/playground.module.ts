@@ -7,8 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FsComponentModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app/material.module';
-import { FirstExampleComponent } from './app/components/first-example/first-example.component';
 import { FsExampleModule } from '@firestitch/example';
+import { FsExamplesComponent } from '../tools/components/examples/examples.component';
+import { FirstExampleComponent } from './app/components/first-example/first-example.component';
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -18,13 +19,14 @@ import { FsExampleModule } from '@firestitch/example';
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
-    FsExampleModule
+    FsExampleModule,
   ],
   entryComponents: [
   ],
   declarations: [
     AppComponent,
-    FirstExampleComponent
+    FirstExampleComponent,
+    FsExamplesComponent
   ],
   providers: [
   ],
