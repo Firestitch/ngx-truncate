@@ -1,5 +1,6 @@
 {
   "name": "@firestitch/component-boilerplate",
+  "description": "@firestitch/component-boilerplate",
   "version": "0.1.0",
   "repository": {
     "type": "git",
