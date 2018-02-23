@@ -39,4 +39,5 @@ dist/*
 /node_modules
 /.playground
 /dll
+/package
 /package-lock.json
