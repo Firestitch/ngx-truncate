@@ -28,6 +28,8 @@
     "copy:styles": "cpx -v \"build/**/*.css\" \"package\"",
     "copy:templates": "cpx -v \"build/**/*.html\" \"package\"",
     "copy:package": "cpx -v \"package.json\" \"package\"",
+    "prepublish": "npm-run-all -s copy:package publish:replace",
+    "publish:replace": "replace-in-file /package/index/g index package/package.json --isRegex",
     "package": "npm-run-all -s clean:build clean:package copy:build build:sass package:replace-scss package:aot package:build copy:styles copy:templates package:minify clean:build package:functions",
     "package:functions": "tsc -p tsconfig.es6.json",
     "package:aot": "ngc -p tsconfig.aot.json",
