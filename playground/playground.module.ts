@@ -8,7 +8,6 @@ import { FsComponentModule } from '../src';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app/material.module';
 import { FsExampleModule } from '@firestitch/example';
-import { FsExamplesComponent } from '../tools/components/examples/examples.component';
 import { FirstExampleComponent } from './app/components/first-example/first-example.component';
 
 @NgModule({
@@ -25,8 +24,7 @@ import { FirstExampleComponent } from './app/components/first-example/first-exam
   ],
   declarations: [
     AppComponent,
-    FirstExampleComponent,
-    FsExamplesComponent
+    FirstExampleComponent
   ],
   providers: [
   ],
