@@ -20,30 +20,10 @@
   "main": "package/index.js",
   "typings": "package/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean:build": "rimraf build",
-    "clean:demo": "rimraf demo",
-    "clean:package": "rimraf package",
-    "copy:build": "cpx -v \"src/**/*\" \"build\"",
-    "copy:styles": "cpx -v \"build/**/*.css\" \"package\"",
-    "copy:templates": "cpx -v \"build/**/*.html\" \"package\"",
-    "copy:package": "cpx -v \"package.json\" \"package\"",
-    "publish:replace": "replace-in-file /package/index/g index package/package.json --isRegex",
-    "package": "npm-run-all -s clean:build clean:package copy:build build:sass package:replace-scss package:aot package:build copy:styles copy:templates package:minify clean:build package:functions",
-    "package:functions": "tsc -p tsconfig.es6.json",
-    "package:aot": "ngc -p tsconfig.aot.json",
-    "package:replace-scss": "node ./tools/replace-scss.js",
-    "package:dev": "webpack --config=tools/webpack.dev.js --progress --profile --watch",
-    "package:minify": "uglifyjs package/index.js --source-map --compress --mangle --screw-ie8 --output package/index.min.js",
-    "package:build": "webpack --config=tools/webpack.package.js --progress --profile",
-    "demo:build": "npm-run-all -s clean:demo compodoc demo:webpack",
-    "demo:serve": "http-server ./demo",
-    "demo:webpack": "webpack --config=tools/webpack.demo.js --progress --profile",
-    "build:sass": "node-sass -r build/ -o build/ || true",
-    "serve": "webpack-dev-server --config=tools/webpack.playground.js --progress --profile --watch",
-    "lint": "tslint 'src/**/*.ts' -p ./tslint.json",
-    "compodoc": "./node_modules/.bin/compodoc src --disableInternal --disablePrivate --disableGraph --disableSourceCode --hideGenerator --output docs --tsconfig tsconfig.compodoc.json",
-    "postinstall": "npm rebuild node-sass"
+    "package": "cd tools && npm run package",
+    "package:publish": "cd tools && npm run package:publish",
+    "demo:build": "cd tools && npm run demo:build",
+    "serve": "cd tools && npm run serve"
   },
   "devDependencies": {
     "@angular/animations": "^5.2.4",
@@ -59,7 +39,7 @@
     "@angular/platform-browser": "^5.2.4",
     "@angular/platform-browser-dynamic": "^5.2.4",
     "@compodoc/compodoc": "^1.0.5",
-    "@firestitch/example": "^0.2.2",
+    "@firestitch/example": "^0.2.20",
     "@types/googlemaps": "^3.30.2",
     "@types/jasmine": "2.5.53",
     "@types/node": "^6.0.99",
@@ -124,13 +104,11 @@
     "webpack-node-externals": "^1.6.0",
     "zone.js": "^0.8.14",
     "http-server": "^0.11.1",
+    "filemanager-webpack-plugin": "^1.0.26",
     "replace-in-file": "^3.4.0"
   },
   "engines": {
     "node": ">=6.0.0"
   },
-  "peerDependencies": {
-  },
-  "dependencies": {
-  }
+  "peerDependencies": {}
 }

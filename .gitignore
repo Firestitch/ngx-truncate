@@ -42,4 +42,6 @@ dist/*
 /package
 /package-lock.json
 /demo
+/docs
 /*.code-workspace
+/package
