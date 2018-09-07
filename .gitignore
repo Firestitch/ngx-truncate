@@ -42,5 +42,4 @@ dist/*
 /package
 /demo
 /docs
-/*.code-workspace
 /package
