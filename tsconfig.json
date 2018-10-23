@@ -19,7 +19,7 @@
     ],
     "paths": {
       "fs-package": [
-        "src/public_api.ts"
+        "src/index.ts"
       ]
     }
   }
