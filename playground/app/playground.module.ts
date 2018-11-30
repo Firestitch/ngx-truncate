@@ -5,6 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FsExampleModule } from '@firestitch/example';
+import { FsMessageModule } from '@firestitch/message';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { FsComponentModule } from 'fs-package';
 
@@ -13,7 +16,6 @@ import {
 ExampleComponent,
 ExamplesComponent } from './components';
 import { AppComponent } from './app.component';
-
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
@@ -28,6 +30,8 @@ const routes: Routes = [
     AppMaterialModule,
     FormsModule,
     FsExampleModule.forRoot(),
+    FsMessageModule.forRoot(),
+    ToastrModule.forRoot({ preventDuplicates: true }),
     RouterModule.forRoot(routes),
   ],
   entryComponents: [

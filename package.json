@@ -23,7 +23,7 @@
     "package": "ng build fs-package",
     "package:test": "ng test fs-package",
     "package:publish": "cd package && npm publish --access=public",
-    "demo:build": "ng build --aot --prod",
+    "demo:build": "cd tools && npm run cli:demo:build",
     "serve": "ng serve"
   },
   "devDependencies": {
@@ -45,7 +45,8 @@
     "@angular/platform-browser-dynamic": "^6.1.9",
     "@angular/router": "^6.1.9",
     "@compodoc/compodoc": "^1.0.5",
-    "@firestitch/example": "^0.3.5",
+    "@firestitch/example": "^0.4.0",
+    "@firestitch/message": "^0.1.22",
     "@types/googlemaps": "^3.30.2",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
@@ -65,6 +66,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^4.1.0",
+    "ngx-toastr": "^8.4.0",
     "node-watch": "^0.5.7",
     "npm-run-all": "^4.1.2",
     "protractor": "~5.4.0",
