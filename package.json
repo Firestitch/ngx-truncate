@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Firestitch/fs-package"
+    "url": "https://github.com/Firestitch/ngx-package"
   },
   "author": {
     "name": "Firestitch",
@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Firestitch/fs-package/issues"
+    "url": "https://github.com/Firestitch/ngx-package/issues"
   },
   "main": "package/index.js",
   "typings": "package/index.d.ts",
