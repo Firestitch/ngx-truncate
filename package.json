@@ -20,10 +20,10 @@
   "main": "package/index.js",
   "typings": "package/index.d.ts",
   "scripts": {
-    "package": "ng build fs-package",
+    "package": "cd tools && npm run cli:package",
     "package:test": "ng test fs-package",
     "package:publish": "cd package && npm publish --access=public",
-    "demo:build": "cd tools && npm run cli:demo:build",
+    "demo:build": "ng build --aot --prod",
     "serve": "ng serve"
   },
   "devDependencies": {
