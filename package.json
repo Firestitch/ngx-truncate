@@ -1,5 +1,6 @@
 {
   "name": "@firestitch/package",
+  "title": "package.json -> Rename Title to Component Title",
   "description": "@firestitch/package",
   "version": "0.1.0",
   "repository": {
@@ -45,7 +46,7 @@
     "@angular/platform-browser-dynamic": "^6.1.9",
     "@angular/router": "^6.1.9",
     "@compodoc/compodoc": "^1.0.5",
-    "@firestitch/example": "^0.4.0",
+    "@firestitch/example": "^0.6.0",
     "@firestitch/message": "^0.1.22",
     "@types/googlemaps": "^3.30.2",
     "@types/jasmine": "~2.8.8",
@@ -80,7 +81,7 @@
     "webpack": "^4.20.2",
     "zone.js": "^0.8.26",
     "rxjs-compat": "^6.3.3",
-    "tslib": "^1.9.3"    
+    "tslib": "^1.9.3"
   },
   "engines": {
     "node": ">=6.0.0"
