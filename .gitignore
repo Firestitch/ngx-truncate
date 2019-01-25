@@ -43,3 +43,4 @@ dist/*
 /package
 /demo
 /docs
+/src/package.json

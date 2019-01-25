@@ -9,12 +9,13 @@ import { FsMessageModule } from '@firestitch/message';
 
 import { ToastrModule } from 'ngx-toastr';
 
-import { FsComponentModule } from 'fs-package';
+import { FsComponentModule } from '@firestitch/package';
 
 import { AppMaterialModule } from './material.module';
 import {
-ExampleComponent,
-ExamplesComponent } from './components';
+  ExampleComponent,
+  ExamplesComponent
+} from './components';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
