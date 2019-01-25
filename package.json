@@ -1,5 +1,6 @@
 {
   "name": "@firestitch/package",
+  "title": "package.json -> Rename Title to Component Title",
   "description": "@firestitch/package",
   "version": "0.1.0",
   "repository": {
