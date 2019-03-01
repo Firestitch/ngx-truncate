@@ -45,7 +45,7 @@
     "@angular/platform-browser-dynamic": "^7.2.5",
     "@angular/router": "^7.2.6",
     "@compodoc/compodoc": "^1.1.8",
-    "@firestitch/example": "^0.6.0",
+    "@firestitch/example": "^7.0.0",
     "@firestitch/iframe": "^0.2.0",
     "@firestitch/message": "^0.2.1",
     "codelyzer": "^4.5.0",
