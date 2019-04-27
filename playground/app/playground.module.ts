@@ -13,10 +13,11 @@ import { FsComponentModule } from '@firestitch/package';
 
 import { AppMaterialModule } from './material.module';
 import {
-  ExampleComponent,
+  KitchenSinkComponent,
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
+import { ConfigureComponent } from './components/configure';
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
@@ -36,11 +37,13 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   entryComponents: [
+    ConfigureComponent
   ],
   declarations: [
     AppComponent,
     ExamplesComponent,
-    ExampleComponent
+    KitchenSinkComponent,
+    ConfigureComponent
   ],
   providers: [
   ],
