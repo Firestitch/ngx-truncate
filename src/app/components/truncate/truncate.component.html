@@ -1,0 +1,5 @@
+<div [ngClass]="{ truncate: truncate }" [class]="'lines-' + lines">
+  <ng-content></ng-content>
+  <a (click)="less()" class="less" [ngClass]="{ 'hide-less': truncate }">Less</a>
+</div>
+<a (click)="more()" class="more" [ngClass]="{ 'hide-more': !truncate }">More</a>

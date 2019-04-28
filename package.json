@@ -1,11 +1,11 @@
 {
-  "name": "@firestitch/package",
-  "title": "package.json -> Rename Title to Component Title",
-  "description": "@firestitch/package",
-  "version": "0.1.0",
+  "name": "@firestitch/truncate",
+  "title": "Truncate",
+  "description": "@firestitch/truncate",
+  "version": "7.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Firestitch/ngx-package"
+    "url": "https://github.com/Firestitch/ngx-truncate"
   },
   "author": {
     "name": "Firestitch",
@@ -16,7 +16,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Firestitch/ngx-package/issues"
+    "url": "https://github.com/Firestitch/ngx-truncate/issues"
   },
   "main": "package/index.js",
   "typings": "package/index.d.ts",

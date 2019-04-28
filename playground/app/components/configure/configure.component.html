@@ -5,15 +5,17 @@
   <div class="configs">
 
     <mat-form-field>
-      <input matInput placeholder="Image Width" type="number" [(ngModel)]="config.width">
+      <mat-select placeholder="Lines" [(ngModel)]="config.lines" name="lines">
+        <mat-option [value]="1">1</mat-option>
+        <mat-option [value]="2">2</mat-option>
+        <mat-option [value]="3">3</mat-option>
+        <mat-option [value]="4">4</mat-option>
+        <mat-option [value]="5">5</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Image Height" [(ngModel)]="config.height">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Text" type="text" [(ngModel)]="config.text">
+      <textarea matInput placeholder="Text" [(ngModel)]="config.text" name="text" cdkTextareaAutosize></textarea>
     </mat-form-field>
 
     <button mat-raised-button color="primary" (click)="reload()">Reload</button>
