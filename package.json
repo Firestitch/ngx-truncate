@@ -46,7 +46,7 @@
     "@angular/router": "^7.2.13",
     "@compodoc/compodoc": "^1.1.9",
     "@firestitch/drawer": "^7.0.1",
-    "@firestitch/example": "^7.0.5",
+    "@firestitch/example": "^7.0.7",
     "@firestitch/menu": "^7.0.1",
     "@firestitch/message": "^7.1.4",
     "codelyzer": "^5.0.0",

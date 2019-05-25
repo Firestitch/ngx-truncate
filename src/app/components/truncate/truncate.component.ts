@@ -16,7 +16,7 @@ export class FsTruncateComponent implements AfterContentInit, AfterContentChecke
   @Input() more = false;
   @Input() tooltip = true;
 
-  private content = '';
+  public content = '';
   public truncate = true;
   public truncated = false;
 
