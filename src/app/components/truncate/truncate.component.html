@@ -1,5 +1,7 @@
 <div [ngClass]="{ truncate: truncate }" [class]="'lines-' + lines">
-  <ng-content></ng-content>
-  <a (click)="less()" class="less" [ngClass]="{ 'hide-less': truncate }">Less</a>
+  <span #contentEl class="content" [matTooltip]="content" [matTooltipDisabled]="!truncated || !tooltip || more" >
+    <ng-content></ng-content>
+  </span>
+  <a (click)="lessClick()" class="less" [ngClass]="{ 'show-less': more && truncated && !truncate }">Less</a>
 </div>
-<a (click)="more()" class="more" [ngClass]="{ 'hide-more': !truncate }">More</a>
+<a (click)="moreClick()" class="more" [ngClass]="{ 'show-more': more && truncated && truncate }">More</a>

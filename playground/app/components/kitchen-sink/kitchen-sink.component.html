@@ -1,4 +1,11 @@
-<fs-truncate [lines]="config.lines">
+<fs-truncate [lines]="config.lines" [more]=true>
+  {{config.text}}
+</fs-truncate>
+
+
+<br><br><br>
+
+<fs-truncate [lines]="config.lines" [tooltip]=true>
   {{config.text}}
 </fs-truncate>
 

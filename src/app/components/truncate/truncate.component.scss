@@ -25,21 +25,25 @@
   &.lines-5 {
     -webkit-line-clamp: 5;
   }
+
+  .content {
+    display: block;
+  }
 }
 
 .more {
-    align-self: flex-end;
-    margin-left: -30px;
-    background: #fff;
-    position: relative;
-    display: none;
-    cursor: pointer;
-    padding-left: 10px;
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 2%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 2%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 2%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
-    font-size: 85%;
+  align-self: flex-end;
+  margin-left: -30px;
+  background: #fff;
+  position: relative;
+  display: none;
+  cursor: pointer;
+  padding-left: 10px;
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 2%, rgba(255,255,255,1) 20%, rgba(255,255,255,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 2%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 2%,rgba(255,255,255,1) 20%,rgba(255,255,255,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+  font-size: 85%;
 }
 
 .less {
@@ -50,19 +54,15 @@
 
 
 :host:hover {
-  .less {
+  .show-less {
     display: inline;
   }
 }
 
 :host:hover {
-  .more {
+  .show-more {
     display: inline-block;
   }
-}
-
-.hide-more {
-  display: none !important;
 }
 
 .hide-less {
