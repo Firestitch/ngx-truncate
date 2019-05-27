@@ -1,5 +1,5 @@
 import {  Component, Input, ViewChild, ElementRef, AfterContentInit,
-          EventEmitter, Output, OnInit, OnDestroy } from '@angular/core';
+          EventEmitter, Output, OnInit, OnDestroy, HostBinding, NgZone, ApplicationRef, ɵConsole } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -14,6 +14,8 @@ export class FsTruncateComponent implements AfterContentInit, OnDestroy, OnInit 
   @ViewChild('contentEl') contentEl: ElementRef;
   @ViewChild('contentWrapper') contentWrapper: ElementRef;
 
+  @HostBinding('class.truncated') truncated = false;
+
   @Output() public readonly contentChanged = new EventEmitter();
 
   @Input() lines = 1;
@@ -22,10 +24,11 @@ export class FsTruncateComponent implements AfterContentInit, OnDestroy, OnInit 
 
   public content = '';
   public truncate = true;
-  public truncated = false;
 
   private _mutationObserver: MutationObserver;
   private _destroy$ = new Subject();
+
+  constructor() {}
 
   moreClick() {
     this.truncate = false;
@@ -39,12 +42,9 @@ export class FsTruncateComponent implements AfterContentInit, OnDestroy, OnInit 
   }
 
   calculateTruncated() {
-    if (this.truncate) {
-      const element = this.contentEl.nativeElement;
-
-      // Sometimes because of line-height and font-size % there could could be a difference in height
-      this.truncated = (element.scrollHeight / element.clientHeight) >= 1.2;
-    }
+    const element = this.contentEl.nativeElement;
+    // Sometimes because of line-height and font-size % there could could be a difference in height
+    this.truncated = (element.scrollHeight / element.clientHeight) >= 1.2;
   }
 
   ngOnInit() {
@@ -62,7 +62,7 @@ export class FsTruncateComponent implements AfterContentInit, OnDestroy, OnInit 
 
     this.contentChanged.emit();
 
-    this._mutationObserver = new MutationObserver((x, y) => {
+    this._mutationObserver = new MutationObserver(() => {
       this.contentChanged.emit();
     });
 

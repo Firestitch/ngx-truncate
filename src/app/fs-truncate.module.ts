@@ -1,8 +1,9 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FsTruncateComponent } from './components/truncate';
+import { FsTruncateComponent } from './components/truncate/truncate.component';
 import { MatTooltipModule } from '@angular/material';
+
 
 @NgModule({
   imports: [

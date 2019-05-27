@@ -3,6 +3,7 @@
 }
 
 .truncate {
+
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
   display: -webkit-box;
@@ -31,6 +32,11 @@
   }
 }
 
+.content {
+  user-select: auto !important;
+  touch-action: auto !important;
+}
+
 .more {
   align-self: flex-end;
   margin-left: -30px;
@@ -52,19 +58,14 @@
   font-size: 85%;
 }
 
-
 :host:hover {
   .show-less {
     display: inline;
   }
 }
 
-:host:hover {
-  .show-more {
+:host.truncated:hover {
+   .show-more {
     display: inline-block;
   }
-}
-
-.hide-less {
-  display: none !important;
 }
