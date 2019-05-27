@@ -1,5 +1,5 @@
 <div [ngClass]="{ truncate: truncate }" [class]="'lines-' + lines">
-  <span #contentEl class="content" [matTooltip]="content" [matTooltipDisabled]="!truncated || !tooltip || more" >
+  <span #contentEl class="content" [matTooltip]="content" [matTooltipDisabled]="!truncated ||  more" >
     <ng-content></ng-content>
   </span>
   <a (click)="lessClick()" class="less" [ngClass]="{ 'show-less': more && truncated && !truncate }">Less</a>
