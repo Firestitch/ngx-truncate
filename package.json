@@ -2,7 +2,7 @@
   "name": "@firestitch/truncate",
   "title": "Truncate",
   "description": "@firestitch/truncate",
-  "version": "7.0.6",
+  "version": "7.0.7",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/ngx-truncate"
