@@ -1,5 +1,6 @@
 import {
   AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
   ElementRef,
   EventEmitter,
@@ -21,6 +22,7 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
   selector: 'fs-truncate',
   templateUrl: 'truncate.component.html',
   styleUrls: ['truncate.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 
