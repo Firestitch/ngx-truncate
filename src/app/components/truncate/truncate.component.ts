@@ -1,6 +1,7 @@
 import {
   AfterContentInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   EventEmitter,
@@ -26,16 +27,16 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
 })
 export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 
-  @ViewChild('contentEl') contentEl: ElementRef;
-  @ViewChild('contentWrapper') contentWrapper: ElementRef;
+  @ViewChild('contentEl') public contentEl: ElementRef = null;
+  @ViewChild('contentWrapper') public contentWrapper: ElementRef = null;
 
-  @HostBinding('class.truncated') truncated = false;
+  @HostBinding('class.truncated') public truncated = false;
 
   @Output() public readonly contentChanged = new EventEmitter();
 
-  @Input() lines = 1;
-  @Input('more') moreVisible = false;
-  @Input() tooltip = true;
+  @Input() public lines = 1;
+  @Input('more') public moreVisible = false;
+  @Input() public tooltip = true;
 
   public content = '';
   public truncate = true;
@@ -49,7 +50,10 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   private _mutationObserver: MutationObserver;
   private _destroy$ = new Subject();
 
-  constructor(private _zone: NgZone) {}
+  constructor(
+    private _zone: NgZone,
+    private _cd: ChangeDetectorRef,
+  ) { }
 
   public ngOnInit() {
     this.contentChanged
@@ -60,6 +64,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
       .subscribe(() => {
         this.content = this.contentEl.nativeElement.innerHTML;
         this._calculateTruncated();
+        this._cd.detectChanges();
       });
   }
 
@@ -84,6 +89,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
       if (changes.lines) {
         this.linesClass = 'lines-' + this.lines;
       }
+      this._cd.detectChanges();
     }
   }
 
@@ -132,4 +138,5 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   private _checkTooltipDisabled() {
     this.tooltipDisabled = !this.truncated || !this.tooltip || this.moreVisible;
   }
+
 }
