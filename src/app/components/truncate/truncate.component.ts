@@ -27,7 +27,7 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
 })
 export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 
-  @ViewChild('contentEl') public contentEl: ElementRef = null;
+  @ViewChild('contentEl', { static: true }) public contentEl: ElementRef = null;
   @ViewChild('contentWrapper') public contentWrapper: ElementRef = null;
 
   @HostBinding('class.truncated') public truncated = false;
@@ -56,16 +56,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   ) { }
 
   public ngOnInit() {
-    this.contentChanged
-      .pipe(
-        debounceTime(200),
-        takeUntil(this._destroy$),
-      )
-      .subscribe(() => {
-        this.content = this.contentEl.nativeElement.innerHTML;
-        this._calculateTruncated();
-        this._cd.detectChanges();
-      });
+    this._listenContentChanges();
   }
 
   public ngAfterContentInit(): void {
@@ -77,6 +68,9 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
       const config = { attributes: false, childList: true, characterData: true, subtree: true };
       this._mutationObserver.observe(this.contentEl.nativeElement, config);
     });
+
+    // Initial calculations
+    this._contentUpdated();
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -113,6 +107,23 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
     setTimeout(() => {
       this._calculateTruncated();
     });
+  }
+
+  private _listenContentChanges() {
+    this.contentChanged
+      .pipe(
+        debounceTime(200),
+        takeUntil(this._destroy$),
+      )
+      .subscribe(() => {
+        this._contentUpdated();
+      });
+  }
+
+  private _contentUpdated() {
+    this.content = this.contentEl.nativeElement.innerHTML;
+    this._calculateTruncated();
+    this._cd.detectChanges();
   }
 
   private _calculateTruncated() {

@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { FsTruncateComponent } from './components/truncate/truncate.component';
-import { MatTooltipModule } from '@angular/material';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { MatTooltipModule } from '@angular/material';
   ],
 })
 export class FsTruncateModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<FsTruncateModule> {
     return {
       ngModule: FsTruncateModule
     };
