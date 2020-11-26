@@ -96,6 +96,14 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
     this._destroy$.complete();
   }
 
+  public toggle() {
+    if (this.truncate) {
+      this.moreClick();
+    } else {
+      this.lessClick();
+    }
+  }
+
   public moreClick() {
     this.truncate = false;
     this._checkButtonsVisibility();
