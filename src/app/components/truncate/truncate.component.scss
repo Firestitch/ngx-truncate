@@ -1,4 +1,4 @@
-.truncate {
+.truncate:not(.truncated) {
 
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
@@ -25,14 +25,13 @@
 
   .content {
     display: block;
+    user-select: auto !important;
+    touch-action: auto !important;
+    cursor: pointer;
   }
 }
 
-.content {
-  user-select: auto !important;
-  touch-action: auto !important;
-  cursor: pointer;
-}
+
 
 .more,
 .less {
@@ -41,9 +40,10 @@
   white-space: nowrap;
   cursor: pointer;
   padding-top: 6px;
+  display: none;
 }
 
-.hide-more,
-.hide-less {
-  display: none;
+.show-more,
+.show-less {
+  display: inline;
 }

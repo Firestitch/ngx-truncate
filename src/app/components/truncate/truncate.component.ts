@@ -15,7 +15,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import { Subject } from 'rxjs';
+import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 
 
@@ -39,11 +39,11 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   @Input() public tooltip = true;
 
   public content = '';
-  public truncate = true;
+  public contentTruncating = false;
   public linesClass = '';
 
-  public moreBtnVisible = false;
-  public lessBtnVisible = false;
+  public showMore = false;
+  public showLess = false;
 
   public tooltipDisabled = true;
 
@@ -57,6 +57,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
 
   public ngOnInit() {
     this._listenContentChanges();
+    this._listenWindowResize();
   }
 
   public ngAfterContentInit(): void {
@@ -97,24 +98,34 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   }
 
   public toggle() {
-    if (this.truncate) {
-      this.moreClick();
-    } else {
+    if (this.truncated) {
       this.lessClick();
+    } else {
+      this.moreClick();
     }
   }
 
   public moreClick() {
-    this.truncate = false;
-    this._checkButtonsVisibility();
+    this.truncated = true;
+    this.showMore = !this.truncated;
+    this.showLess = this.truncated;
   }
 
   public lessClick() {
-    this.truncate = true;
-    this._checkButtonsVisibility();
-    setTimeout(() => {
-      this._calculateTruncated();
-    });
+    this.truncated = false;
+    this.showMore = !this.truncated;
+    this.showLess = this.truncated;
+  }
+
+  private _listenWindowResize() {
+    fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(300),
+        takeUntil(this._destroy$),
+      )
+      .subscribe(() => {
+        this._contentUpdated();
+      });
   }
 
   private _listenContentChanges() {
@@ -125,6 +136,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
       )
       .subscribe(() => {
         this._contentUpdated();
+        this._cd.markForCheck();
       });
   }
 
@@ -137,19 +149,23 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   private _calculateTruncated() {
     const element = this.contentEl.nativeElement;
     // Sometimes because of line-height and font-size % there could could be a difference in height
-    this.truncated = (element.scrollHeight / element.clientHeight) >= 1.2;
+    this.contentTruncating = (element.scrollHeight / element.offsetHeight) > 1;
 
     this._checkTooltipDisabled();
+    this._checkButtonsVisibility();
   }
 
   private _checkButtonsVisibility() {
+    this.showMore = false;
+    this.showLess = false;
+
     if (this.moreVisible) {
-      if (this.truncate) {
-        this.moreBtnVisible = true;
-        this.lessBtnVisible = false;
+      if (this.contentTruncating) {
+        this.showMore = true;
+        this.showLess = false;
       } else {
-        this.moreBtnVisible = false;
-        this.lessBtnVisible = true;
+        this.showMore = false;
+        this.showLess = true;
       }
     }
   }
