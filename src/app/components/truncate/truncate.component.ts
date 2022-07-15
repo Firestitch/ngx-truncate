@@ -30,8 +30,6 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   @ViewChild('contentEl', { static: true }) public contentEl: ElementRef = null;
   @ViewChild('contentWrapper') public contentWrapper: ElementRef = null;
 
-  @HostBinding('class.truncated') public truncated = false;
-
   @Output() public readonly contentChanged = new EventEmitter();
 
   @Input() public lines = 1;
@@ -39,11 +37,15 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   @Input() public tooltip = true;
 
   public content = '';
-  public contentTruncating = false;
+
+  @HostBinding('class.truncated')
+  public contentTruncating = true;
+
   public linesClass = '';
 
   public showMore = false;
   public showLess = false;
+  public expanded = false;
 
   public tooltipDisabled = true;
 
@@ -98,23 +100,32 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   }
 
   public toggle() {
-    if (this.truncated) {
-      this.lessClick();
-    } else {
+    const initialContentNotTruncated = !this.contentTruncating && !this.expanded;
+    if (!this.moreVisible || initialContentNotTruncated) {
+      return;
+    }
+
+    if (this.contentTruncating) {
       this.moreClick();
+    } else {
+      this.lessClick();
     }
   }
 
   public moreClick() {
-    this.truncated = true;
-    this.showMore = !this.truncated;
-    this.showLess = this.truncated;
+    this.expanded = true;
+    this.contentTruncating = false;
+    this.showMore = this.contentTruncating;
+    this.showLess = !this.contentTruncating;
+    this._checkTooltipDisabled();
   }
 
   public lessClick() {
-    this.truncated = false;
-    this.showMore = !this.truncated;
-    this.showLess = this.truncated;
+    this.expanded = false;
+    this.contentTruncating = true;
+    this.showMore = this.contentTruncating;
+    this.showLess = !this.contentTruncating;
+    this._checkTooltipDisabled();
   }
 
   private _listenWindowResize() {
@@ -143,14 +154,11 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   private _contentUpdated() {
     this.content = this.contentEl.nativeElement.innerHTML;
     this._calculateTruncated();
-    this._cd.detectChanges();
+    this._cd.markForCheck();
   }
 
   private _calculateTruncated() {
-    const element = this.contentEl.nativeElement;
-    // Sometimes because of line-height and font-size % there could could be a difference in height
-    this.contentTruncating = (element.scrollHeight / element.offsetHeight) > 1;
-
+    this._contentTruncatingUpdate();
     this._checkTooltipDisabled();
     this._checkButtonsVisibility();
   }
@@ -171,7 +179,14 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
   }
 
   private _checkTooltipDisabled() {
-    this.tooltipDisabled = !this.truncated || !this.tooltip || this.moreVisible;
+    this.tooltipDisabled = !this.contentTruncating || !this.tooltip;
+  }
+
+  private _contentTruncatingUpdate(): void {
+    const element = this.contentEl.nativeElement;
+    // Sometimes because of line-height and font-size % there could could be a difference in height
+    this.contentTruncating = (element.scrollHeight / element.offsetHeight) > 1;
+    this._cd.markForCheck();
   }
 
 }

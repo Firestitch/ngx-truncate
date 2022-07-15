@@ -1,8 +1,7 @@
-<div [ngClass]="{ truncate: lines, truncated: truncated }" [class]="linesClass">
-  <span #contentEl class="content" [matTooltip]="content" [matTooltipDisabled]="tooltipDisabled" (click)="toggle()">
+<div [ngClass]="{ truncate: lines, truncated: contentTruncating }" [class]="linesClass">
+  <span #contentEl class="content" [ngClass]="{ 'more-visible': moreVisible }" [matTooltip]="content" [matTooltipDisabled]="tooltipDisabled" (click)="toggle()">
     <ng-content></ng-content>
   </span>
 </div>
-<div class="more" [ngClass]="{ 'show-more': contentTruncating && showMore }" (click)="moreClick()">See More</div>
-<div class="less" [ngClass]="{ 'show-less': contentTruncating && showLess }" (click)="lessClick()">See Less</div>
-
+<div class="more" [ngClass]="{ 'show-more': showMore }" (click)="moreClick()">See More</div>
+<div class="less" [ngClass]="{ 'show-less': expanded && showLess }" (click)="lessClick()">See Less</div>

@@ -1,4 +1,4 @@
-.truncate:not(.truncated) {
+.truncate.truncated {
 
   /* autoprefixer: ignore next */
   -webkit-box-orient: vertical;
@@ -25,9 +25,11 @@
 
   .content {
     display: block;
-    user-select: auto !important;
-    touch-action: auto !important;
-    cursor: pointer;
+    &.more-visible {
+      user-select: auto !important;
+      touch-action: auto !important;
+      cursor: pointer;
+    }
   }
 }
 
