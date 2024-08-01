@@ -1,3 +1,10 @@
+::ng-deep {
+  .fs-truncate-tooltip {
+    word-break: break-all;
+  }
+}
+
+
 .truncate.truncated {
 
   /* autoprefixer: ignore next */

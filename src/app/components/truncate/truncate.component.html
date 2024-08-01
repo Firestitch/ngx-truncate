@@ -1,5 +1,12 @@
 <div [ngClass]="{ truncate: lines, truncated: contentTruncating }" [class]="linesClass">
-  <span #contentEl class="content" [ngClass]="{ 'more-visible': moreVisible }" [matTooltip]="content" [matTooltipDisabled]="tooltipDisabled" (click)="toggle()">
+  <span
+      #contentEl
+      class="content"
+      [ngClass]="{ 'more-visible': moreVisible }"
+      [matTooltip]="content"
+      [matTooltipDisabled]="tooltipDisabled"
+      [matTooltipClass]="'fs-truncate-tooltip'"
+      (click)="toggle()">
     <ng-content></ng-content>
   </span>
 </div>
