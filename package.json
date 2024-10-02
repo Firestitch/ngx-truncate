@@ -45,7 +45,7 @@
     "@angular/router": "^14.3.0",
     "@firestitch/api": "^12.4.0",
     "@firestitch/common": "^12.7.0",
-    "@firestitch/component-tools": "^14.0.2",
+    "@firestitch/component-tools": "^14.0.3",
     "@firestitch/core": "^12.1.0",
     "@firestitch/date": "^12.4.5",
     "@firestitch/drawer": "^12.2.3",
