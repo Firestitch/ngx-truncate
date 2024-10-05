@@ -95,7 +95,7 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
       this._mutationObserver.disconnect();
     }
 
-    this._destroy$.next();
+    this._destroy$.next(null);
     this._destroy$.complete();
   }
 
