@@ -1,20 +1,4 @@
-import {
-  AfterContentInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostBinding,
-  Input,
-  NgZone,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  SimpleChanges,
-  ViewChild,
-} from '@angular/core';
+import { AfterContentInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, HostBinding, Input, NgZone, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, inject } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { NgClass } from '@angular/common';
@@ -30,6 +14,9 @@ import { MatTooltip } from '@angular/material/tooltip';
     imports: [NgClass, MatTooltip],
 })
 export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
+  private _zone = inject(NgZone);
+  private _cd = inject(ChangeDetectorRef);
+
 
   @ViewChild('contentEl', { static: true }) public contentEl: ElementRef = null;
   @ViewChild('contentWrapper') public contentWrapper: ElementRef = null;
@@ -55,11 +42,6 @@ export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges,
 
   private _mutationObserver: MutationObserver;
   private _destroy$ = new Subject();
-
-  constructor(
-    private _zone: NgZone,
-    private _cd: ChangeDetectorRef,
-  ) { }
 
   public ngOnInit() {
     this._listenContentChanges();
