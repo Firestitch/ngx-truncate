@@ -17,13 +17,17 @@ import {
 } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
+import { NgClass } from '@angular/common';
+import { MatTooltip } from '@angular/material/tooltip';
 
 
 @Component({
-  selector: 'fs-truncate',
-  templateUrl: 'truncate.component.html',
-  styleUrls: ['truncate.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'fs-truncate',
+    templateUrl: 'truncate.component.html',
+    styleUrls: ['truncate.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgClass, MatTooltip],
 })
 export class FsTruncateComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 

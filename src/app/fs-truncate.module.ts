@@ -6,16 +6,14 @@ import { FsTruncateComponent } from './components/truncate/truncate.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatTooltipModule
-  ],
-  exports: [
-    FsTruncateComponent,
-  ],
-  declarations: [
-    FsTruncateComponent,
-  ],
+    imports: [
+        CommonModule,
+        MatTooltipModule,
+        FsTruncateComponent
+    ],
+    exports: [
+        FsTruncateComponent,
+    ],
 })
 export class FsTruncateModule {
   static forRoot(): ModuleWithProviders<FsTruncateModule> {

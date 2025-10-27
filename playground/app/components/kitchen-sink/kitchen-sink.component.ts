@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FsTruncateComponent } from '../../../../src/app/components/truncate/truncate.component';
 
 @Component({
-  selector: 'kitchen-sink',
-  templateUrl: 'kitchen-sink.component.html',
-  styleUrls: ['kitchen-sink.component.scss'],
+    selector: 'kitchen-sink',
+    templateUrl: 'kitchen-sink.component.html',
+    styleUrls: ['kitchen-sink.component.scss'],
+    standalone: true,
+    imports: [FsTruncateComponent],
 })
 export class KitchenSinkComponent {
 
